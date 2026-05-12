@@ -13,12 +13,16 @@ app.get("/alunos", (req, res) => {
     res.json({alunos: Object.values(alunos)});
 });
 
+app.get("/alunos/:id", (req, res) => {
+    res.json({aluno: alunos[req.params.id]});
+});
+
 app.post("/alunos", (req, res) => {
     const aluno = req.body;
     const idAluno = uuidv4();
-    aluno.id = idAluno
+    aluno.id = idAluno;
     alunos[idAluno] = aluno;
-    res.json({msg: "Aluno adicionado com sucesso."})
+    res.json({msg: "Aluno adicionado com sucesso."});
 });
 
 app.put("/alunos", (req, res) => {

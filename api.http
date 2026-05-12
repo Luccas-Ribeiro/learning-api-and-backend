@@ -6,11 +6,15 @@ GET http://localhost:8080/alunos
 
 ###
 
+GET http://localhost:8080/alunos/1bfaaa84-1cea-44a6-b5c3-66d677300e13
+
+###
+
 POST http://localhost:8080/alunos
 content-type: application/json
 
 {
-    "nome": "mathias"
+    "nome": "pedrin"
 }
 
 ###
