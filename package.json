@@ -1,0 +1,18 @@
+{
+  "name": "web",
+  "version": "1.0.0",
+  "description": "Estudando backend node.js",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec node index2.js"
+  },
+  "author": "Dluxx",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "uuid": "^14.0.0"
+  }
+}
