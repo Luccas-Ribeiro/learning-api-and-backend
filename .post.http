@@ -1,0 +1,26 @@
+### Get all posts
+GET http://localhost:8080/posts
+
+### Get a post by id
+GET http://localhost:8080/posts/
+
+### Post a post
+POST http://localhost:8080/posts
+Content-Type: application/json
+
+{
+    "titulo": "Titulo",
+    "texto": "texto legal"
+}
+
+### Edit a post
+PUT http://localhost:8080/posts?id=
+Content-Type: application/json
+
+{
+    "titulo": "Titulo legal",
+    "texto": "texto legal parte dois"
+}
+
+### Delete a post
+DELETE http://localhost:8080/posts?id=
