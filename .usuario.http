@@ -14,7 +14,8 @@ POST http://localhost:8080/usuarios
 content-type: application/json
 
 {
-    "nome": "pedrin"
+    "email": "pedrin@gmail.com",
+    "senha": "senhasegura"
 }
 
 ### Edit a user by id
