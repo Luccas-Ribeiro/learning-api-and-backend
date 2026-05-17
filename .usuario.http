@@ -23,8 +23,9 @@ content-type: application/json
 PUT http://localhost:8080/usuarios?id=
 content-type: application/json
 
-{
-    "nome": "paulin bacana"
+{ 
+    "email": "paulinbacana@gmail.com",
+    "senha": "senhasegura"
 }
 
 ### Delete a user by id

@@ -1,11 +1,10 @@
 const express = require('express');
 const router = express.Router();
 const { v4: uuidv4 } = require('uuid');
-const usuarioSchema = require('../schemas/usuario.schema');
-const Ajv = require('ajv');
-const ajv = new Ajv();
-const addFormats = require('ajv-formats');
-addFormats(ajv);
+const userMid = require('../middleware/validateUser.middleware');
+
+router.post('/', userMid);
+router.put('/', userMid);
 
 const usuarios = {};
 
@@ -19,18 +18,10 @@ router.get("/:id", (req, res) => {
 
 router.post("/", (req, res) => {
     const usuario = req.body;
-
-    const validate = ajv.compile(usuarioSchema);
-    const valid = validate(usuario);
-
-    if (valid){
-        const idUsuario = uuidv4();
-        usuario.id = idUsuario;
-        usuarios[idUsuario] = usuario;
-        res.json({msg: "Usuario adicionado com sucesso."});
-    } else {
-        res.statusCode(400).json({msg: "Dados inválidos.", error: validate.error});
-    }
+    const idUsuario = uuidv4();
+    usuario.id = idUsuario;
+    usuarios[idUsuario] = usuario;
+    res.json({msg: "Usuario adicionado com sucesso."});
 });
 
 router.put("/", (req, res) => {
